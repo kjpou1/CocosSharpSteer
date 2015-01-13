@@ -1,6 +1,6 @@
 CocosSharpSteer is a port of [Martin Even's SharpSteer2](https://github.com/martindevans/SharpSteer2) to CocosSharp.  
 
-SharpSteer is a C# port of [OpenSteer](http://opensteer.sourceforge.net/). Like OpenSteer, the aim of SharpSteer is to help construct steering behaviors for autonomous characters in games and animation, with a current implementation focus toward Microsoft's XNA.
+SharpSteer is a C# port of [OpenSteer](http://opensteer.sourceforge.net/). Like OpenSteer, the aim of SharpSteer is to help construct steering behaviors for autonomous characters in games and animation, with this ports current implementation focus toward Xamarin's CocosSharp.
 
 Like OpenSteer, CocosSharpSteer provides a CocosSharp application which demonstrates predefined steering behaviors. The user can quickly prototype, visualize, annotate and debug new steering behaviors by writing a plug-in for this Demo application.
 
