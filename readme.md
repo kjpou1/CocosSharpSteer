@@ -18,8 +18,8 @@ CocosSharpSteer will provide a NuGet package in the future.
 
 ### Documentation
 
-The original steering behaviours OpenSteer is documented [here](http://opensteer.sourceforge.net/)
-The original steering behaviours are documented [here](http://www.red3d.com/cwr/papers/1999/gdc99steer.html)
+* The original steering behaviours OpenSteer is documented [here](http://opensteer.sourceforge.net/)
+* The original steering behaviours are documented [here](http://www.red3d.com/cwr/papers/1999/gdc99steer.html)
 
 ### Useful Books
 The author of OpenSteer's site [ai-junkie](http://www.ai-junkie.com/books/toc_pgaibe.html)
