@@ -164,4 +164,12 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
-/ProjectTemplates/NuGet/output
+/src/packages/**/*.nupkg
+/src/packages/**/*.dll
+/src/packages/**/*.xml
+/src/packages/**/*.pri
+/SteeringDemo/packages/**/*.nupkg
+/SteeringDemo/packages/**/*.dll
+/SteeringDemo/packages/**/*.xml
+/SteeringDemo/packages/**/*.pri
+

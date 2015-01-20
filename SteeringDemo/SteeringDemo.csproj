@@ -1,46 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{023DAF31-F9B3-4C24-AF48-6E5BC0475831}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2AA92EF-1C66-4100-B17B-613EA7CB7BCC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CocosSharpSteer</RootNamespace>
-    <AssemblyName>CocosSharpSteer</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>SteeringDemo</RootNamespace>
+    <AssemblyName>SteeringDemo</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\Windows\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>bin\WindowsDX\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\Windows\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\WindowsDX\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Game.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BitMiracle.LibTiff.NET">
+    <Compile Include="AnnotationService.cs" />
+    <Compile Include="Clock.cs" />
+    <Compile Include="DeferredDraw.cs" />
+    <Compile Include="Draw.cs" />
+    <Compile Include="GameAppDelegate.cs" />
+    <Compile Include="GameLayer.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="IPlugIn.cs" />
+    <Compile Include="PlugIn.cs" />
+    <Compile Include="Plugins\Arrival\ArrivalPlugIn.cs" />
+    <Compile Include="Plugins\Boids\Boid.cs" />
+    <Compile Include="Plugins\Boids\BoidsPlugIn.cs" />
+    <Compile Include="Plugins\Ctf\CtfBase.cs" />
+    <Compile Include="Plugins\Ctf\CtfEnemy.cs" />
+    <Compile Include="Plugins\Ctf\CtfNode.cs" />
+    <Compile Include="Plugins\Ctf\CtfPlugIn.cs" />
+    <Compile Include="Plugins\Ctf\CtfSeeker.cs" />
+    <Compile Include="Plugins\Ctf\Globals.cs" />
+    <Compile Include="Plugins\LowSpeedTurn\LowSpeedTurn.cs" />
+    <Compile Include="Plugins\LowSpeedTurn\LowSpeedTurnPlugIn.cs" />
+    <Compile Include="Plugins\MeshPathFollowing\MeshPathFollowingPlugin.cs" />
+    <Compile Include="Plugins\MeshPathFollowing\PathWalker.cs" />
+    <Compile Include="Plugins\MultiplePursuit\MpBase.cs" />
+    <Compile Include="Plugins\MultiplePursuit\MpPlugIn.cs" />
+    <Compile Include="Plugins\MultiplePursuit\MpPursuer.cs" />
+    <Compile Include="Plugins\MultiplePursuit\MpWanderer.cs" />
+    <Compile Include="Plugins\OneTurning\OneTurning.cs" />
+    <Compile Include="Plugins\OneTurning\OneTurningPlugIn.cs" />
+    <Compile Include="Plugins\Wanderer\WandererBase.cs" />
+    <Compile Include="Plugins\Wanderer\WandererPlugIn.cs" />
+    <Compile Include="Plugins\Wanderer\Wanderer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\hd\animations\" />
+    <Folder Include="Content\hd\fonts\" />
+    <Folder Include="Content\hd\images\" />
+    <Folder Include="Content\ld\animations\" />
+    <Folder Include="Content\ld\fonts\" />
+    <Folder Include="Content\ld\images\" />
+    <Folder Include="Content\sounds\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BitMiracle.LibTiff.NET, Version=2.3.624.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\CocosSharp.PCL.Shared.DX.1.3.0.0\lib\net40\BitMiracle.LibTiff.NET.dll</HintPath>
     </Reference>
-    <Reference Include="box2d">
+    <Reference Include="box2d, Version=1.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\CocosSharp.PCL.Shared.DX.1.3.0.0\lib\net40\box2d.dll</HintPath>
     </Reference>
-    <Reference Include="CocosSharp">
+    <Reference Include="CocosSharp, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\CocosSharp.PCL.Shared.DX.1.3.0.0\lib\net40\CocosSharp.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\CocosSharp.PCL.Shared.DX.1.3.0.0\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Lidgren.Network, Version=2012.1.7.0, Culture=neutral, processorArchitecture=MSIL">
@@ -81,43 +132,26 @@
       <HintPath>packages\CocosSharp.PCL.Shared.DX.1.3.0.0\lib\net40\SharpDX.XInput.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseVehicle.cs" />
-    <Compile Include="Database\IProximityDatabase.cs" />
-    <Compile Include="Database\ITokenForProximityDatabase.cs" />
-    <Compile Include="Database\LocalityQueryDatabase.cs" />
-    <Compile Include="Database\LocalityQueryProximityDatabase.cs" />
-    <Compile Include="Helpers\LocalSpaceBasisHelpers.cs" />
-    <Compile Include="Helpers\PathwayHelpers.cs" />
-    <Compile Include="Helpers\RandomHelpers.cs" />
-    <Compile Include="Helpers\Utilities.cs" />
-    <Compile Include="Helpers\Vector2Helpers.cs" />
-    <Compile Include="Helpers\VehicleHelpers.cs" />
-    <Compile Include="IAnnotationService.cs" />
-    <Compile Include="IFlowField.cs" />
-    <Compile Include="ILocalSpaceBasis.cs" />
-    <Compile Include="IVehicle.cs" />
-    <Compile Include="LocalSpace.cs" />
-    <Compile Include="NullAnnotationService.cs" />
-    <Compile Include="Obstacles\CircleObstacle.cs" />
-    <Compile Include="Obstacles\IObstacle.cs" />
-    <Compile Include="Obstacles\SphericalObstacle.cs" />
-    <Compile Include="Pathway\IPathway.cs" />
-    <Compile Include="Pathway\PolylinePathway.cs" />
-    <Compile Include="Pathway\TrianglePathway.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleVehicle.cs" />
-    <Compile Include="SteerLibrary.cs" />
+    <Content Include="Game.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="Content\fonts\MarkerFelt-22.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\CocosSharpSteer.Windows.csproj">
+      <Project>{023daf31-f9b3-4c24-af48-6e5bc0475831}</Project>
+      <Name>CocosSharpSteer.Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\MarkerFelt-12.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
