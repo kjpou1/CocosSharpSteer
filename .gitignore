@@ -173,3 +173,9 @@ pip-log.txt
 /SteeringDemo/packages/**/*.xml
 /SteeringDemo/packages/**/*.pri
 
+/SteeringDemo/SteeringDemo.Mac/packages/**/*.nupkg
+/SteeringDemo/SteeringDemo.Mac/packages/**/*.dll
+/SteeringDemo/SteeringDemo.Mac/packages/**/*.xml
+/SteeringDemo/SteeringDemo.Mac/packages/**/*.pri
+
+
