@@ -8,11 +8,11 @@ Keys
 
 There are predefined keys to control the demo.
 
-'R' - Reset Plugin
-'S' - Select Next Vehicle
-'A' - Toggle Annotation debugging
-space - Pause animations
-Tab - Select the next plugin
+- 'R' - Reset Plugin
+- 'S' - Select Next Vehicle
+- 'A' - Toggle Annotation debugging
+- Space - Pause animations
+- Tab - Select the next plugin
 
 Special keys are documented in the upper left corner if they are defined.
 
