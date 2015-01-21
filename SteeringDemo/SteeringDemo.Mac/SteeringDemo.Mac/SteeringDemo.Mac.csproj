@@ -93,7 +93,6 @@
     <Folder Include="Resources\" />
     <Folder Include="Content\fonts\" />
     <Folder Include="Content\images\" />
-    <Folder Include="Content\images\" />
     <Folder Include="Plugins\" />
   </ItemGroup>
   <ItemGroup>
