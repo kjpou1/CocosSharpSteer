@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{76831FF1-EDF0-4EE4-A1B8-BA882E7DC8CF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SteeringDemo.Mac</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>SteeringDemo.Mac</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseRefCounting>false</UseRefCounting>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseRefCounting>false</UseRefCounting>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LinkMode>SdkOnly</LinkMode>
+    <UseRefCounting>false</UseRefCounting>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="ChipmunkSharp">
+      <HintPath>..\packages\CocosSharp.MacOS.1.3.0.0\lib\net40\ChipmunkSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CocosSharp">
+      <HintPath>..\packages\CocosSharp.MacOS.1.3.0.0\lib\net40\CocosSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\CocosSharp.MacOS.1.3.0.0\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Lidgren.Network">
+      <HintPath>..\packages\CocosSharp.MacOS.1.3.0.0\lib\net40\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Net">
+      <HintPath>..\packages\CocosSharp.MacOS.1.3.0.0\lib\net40\MonoGame.Framework.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\packages\CocosSharp.MacOS.1.3.0.0\lib\net40\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Sdl">
+      <HintPath>..\packages\CocosSharp.MacOS.1.3.0.0\lib\net40\Tao.Sdl.dll</HintPath>
+    </Reference>
+    <Reference Include="XamMac, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Content\fonts\" />
+    <Folder Include="Content\images\" />
+    <Folder Include="Content\images\" />
+    <Folder Include="Plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="..\..\AnnotationService.cs">
+      <Link>AnnotationService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Clock.cs">
+      <Link>Clock.cs</Link>
+    </Compile>
+    <Compile Include="..\..\DeferredDraw.cs">
+      <Link>DeferredDraw.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Draw.cs">
+      <Link>Draw.cs</Link>
+    </Compile>
+    <Compile Include="..\..\GameAppDelegate.cs">
+      <Link>GameAppDelegate.cs</Link>
+    </Compile>
+    <Compile Include="..\..\GameLayer.cs">
+      <Link>GameLayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\IPlugIn.cs">
+      <Link>IPlugIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\PlugIn.cs">
+      <Link>PlugIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Arrival\ArrivalPlugIn.cs">
+      <Link>Plugins\Arrival\ArrivalPlugIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Boids\Boid.cs">
+      <Link>Plugins\Boids\Boid.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Boids\BoidsPlugIn.cs">
+      <Link>Plugins\Boids\BoidsPlugIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Ctf\CtfBase.cs">
+      <Link>Plugins\Ctf\CtfBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Ctf\CtfEnemy.cs">
+      <Link>Plugins\Ctf\CtfEnemy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Ctf\CtfNode.cs">
+      <Link>Plugins\Ctf\CtfNode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Ctf\CtfPlugIn.cs">
+      <Link>Plugins\Ctf\CtfPlugIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Ctf\CtfSeeker.cs">
+      <Link>Plugins\Ctf\CtfSeeker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Ctf\Globals.cs">
+      <Link>Plugins\Ctf\Globals.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\LowSpeedTurn\LowSpeedTurn.cs">
+      <Link>Plugins\LowSpeedTurn\LowSpeedTurn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\LowSpeedTurn\LowSpeedTurnPlugIn.cs">
+      <Link>Plugins\LowSpeedTurn\LowSpeedTurnPlugIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\MeshPathFollowing\MeshPathFollowingPlugin.cs">
+      <Link>Plugins\MeshPathFollowing\MeshPathFollowingPlugin.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\MeshPathFollowing\PathWalker.cs">
+      <Link>Plugins\MeshPathFollowing\PathWalker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\MultiplePursuit\MpBase.cs">
+      <Link>Plugins\MultiplePursuit\MpBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\MultiplePursuit\MpPlugIn.cs">
+      <Link>Plugins\MultiplePursuit\MpPlugIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\MultiplePursuit\MpPursuer.cs">
+      <Link>Plugins\MultiplePursuit\MpPursuer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\MultiplePursuit\MpWanderer.cs">
+      <Link>Plugins\MultiplePursuit\MpWanderer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\OneTurning\OneTurning.cs">
+      <Link>Plugins\OneTurning\OneTurning.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\OneTurning\OneTurningPlugIn.cs">
+      <Link>Plugins\OneTurning\OneTurningPlugIn.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Wanderer\Wanderer.cs">
+      <Link>Plugins\Wanderer\Wanderer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Wanderer\WandererBase.cs">
+      <Link>Plugins\Wanderer\WandererBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Plugins\Wanderer\WandererPlugIn.cs">
+      <Link>Plugins\Wanderer\WandererPlugIn.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="..\..\Content\fonts\MarkerFelt-12.xnb">
+      <Link>Content\fonts\MarkerFelt-12.xnb</Link>
+    </Content>
+    <Content Include="..\..\Content\fonts\MarkerFelt-22.xnb">
+      <Link>Content\fonts\MarkerFelt-22.xnb</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\CocosSharpSteer.Mac.csproj">
+      <Project>{0FD36691-7F66-419A-BBE3-DBD3BAB5D1F0}</Project>
+      <Name>CocosSharpSteer.Mac</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
