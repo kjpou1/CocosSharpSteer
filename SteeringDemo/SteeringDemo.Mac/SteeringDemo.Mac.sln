@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteeringDemo.Mac", "Steerin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocosSharpSteer.Mac", "..\..\src\CocosSharpSteer.Mac.csproj", "{0FD36691-7F66-419A-BBE3-DBD3BAB5D1F0}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SteeringDemo.Shared", "..\SteeringDemo.Shared\SteeringDemo.Shared.shproj", "{DD1EFFF7-31E5-42CE-B0E3-B06081A999BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

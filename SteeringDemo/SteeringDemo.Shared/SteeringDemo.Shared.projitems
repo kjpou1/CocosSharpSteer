@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{DD1EFFF7-31E5-42CE-B0E3-B06081A999BB}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SteeringDemo.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AnnotationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Clock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DeferredDraw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Draw.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameAppDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPlugIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PlugIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Arrival\ArrivalPlugIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Boids\Boid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Boids\BoidsPlugIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Ctf\CtfBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Ctf\CtfEnemy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Ctf\CtfNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Ctf\CtfPlugIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Ctf\CtfSeeker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Ctf\Globals.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\LowSpeedTurn\LowSpeedTurn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\LowSpeedTurn\LowSpeedTurnPlugIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\MeshPathFollowing\MeshPathFollowingPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\MeshPathFollowing\PathWalker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\MultiplePursuit\MpBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\MultiplePursuit\MpPlugIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\MultiplePursuit\MpPursuer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\MultiplePursuit\MpWanderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\OneTurning\OneTurning.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\OneTurning\OneTurningPlugIn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Wanderer\Wanderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Wanderer\WandererBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugins\Wanderer\WandererPlugIn.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Plugins\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Content\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Content\fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Content\fonts\MarkerFelt-12.xnb" />
+    <None Include="$(MSBuildThisFileDirectory)Content\fonts\MarkerFelt-22.xnb" />
+  </ItemGroup>
+</Project>
