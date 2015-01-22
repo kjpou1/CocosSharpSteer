@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteeringDemo", "SteeringDemo.csproj", "{C2AA92EF-1C66-4100-B17B-613EA7CB7BCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteeringDemo.Windows", "SteeringDemo.Windows\SteeringDemo.Windows.csproj", "{C2AA92EF-1C66-4100-B17B-613EA7CB7BCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocosSharpSteer.Windows", "..\src\CocosSharpSteer.Windows.csproj", "{023DAF31-F9B3-4C24-AF48-6E5BC0475831}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocosSharpSteer.Windows", "..\..\src\CocosSharpSteer.Windows.csproj", "{023DAF31-F9B3-4C24-AF48-6E5BC0475831}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SteeringDemo.Shared", "..\SteeringDemo.Shared\SteeringDemo.Shared.shproj", "{DD1EFFF7-31E5-42CE-B0E3-B06081A999BB}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\SteeringDemo.Shared\SteeringDemo.Shared.projitems*{c2aa92ef-1c66-4100-b17b-613ea7cb7bcc}*SharedItemsImports = 4
+		..\SteeringDemo.Shared\SteeringDemo.Shared.projitems*{dd1efff7-31e5-42ce-b0e3-b06081a999bb}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
