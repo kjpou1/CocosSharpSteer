@@ -16,58 +16,57 @@ using SteeringDemo.PlugIns.Ctf;
 namespace SteeringDemo
 {
 
-    public class Arrow : CCDrawNode
-    {
-        CCPoint[] arrowPoints = {new CCPoint(-1.0f, 0.6f),
-            new CCPoint(1.0f, 0.0f),
-            new CCPoint(-1.0f, -0.6f),
-        };
+    //public class Arrow : CCDrawNode
+    //{
+    //    CCPoint[] arrowPoints = {new CCPoint(-1.0f, 0.6f),
+    //        new CCPoint(1.0f, 0.0f),
+    //        new CCPoint(-1.0f, -0.6f),
+    //    };
 
-        float radius = .20f;
+    //    float radius = .20f;
 
-        public Arrow()
-            : base()
-        {
-            ContentSize = new CCSize(25, 25);
-            Color = CCColor3B.White;
-            Opacity = 255;
+    //    public Arrow()
+    //        : base()
+    //    {
+    //        ContentSize = new CCSize(25, 25);
+    //        Color = CCColor3B.White;
+    //        Opacity = 255;
 
-            var arrow = new CCPoint[arrowPoints.Length];
-            for (int a = 0; a < arrowPoints.Length; a++)
-            {
-                arrow[a] = (CCPoint)(ContentSize * (CCSize)arrowPoints[a]);
-            }
+    //        var arrow = new CCPoint[arrowPoints.Length];
+    //        for (int a = 0; a < arrowPoints.Length; a++)
+    //        {
+    //            arrow[a] = (CCPoint)(ContentSize * (CCSize)arrowPoints[a]);
+    //        }
 
-            DrawPolygon(arrow,
-                3, CCColor4B.White, 0, CCColor4B.Transparent);
+    //        DrawPolygon(arrow,
+    //            3, CCColor4B.White, 0, CCColor4B.Transparent);
 
-            DrawSolidCircle(CCPoint.Zero - new CCPoint(radius / 2, radius / 2), ContentSize.Width * radius, CCColor4B.Red);
-        }
+    //        DrawSolidCircle(CCPoint.Zero - new CCPoint(radius / 2, radius / 2), ContentSize.Width * radius, CCColor4B.Red);
+    //    }
 
-        //        public override void OnEnter()
-        //        {
-        //            base.OnEnter();
-        //
-        //            var bounds = VisibleBoundsWorldspace;
-        //
-        //
-        //            var arrow = new CCPoint[arrowPoints.Length];
-        //            for (int a = 0; a < arrowPoints.Length; a++)
-        //            {
-        //                arrow[a] = (CCPoint)(ContentSize * (CCSize)arrowPoints[a]);
-        //            }
-        //
-        //            DrawPolygon(arrow, 
-        //                3, CCColor4B.White, 0, CCColor4B.Transparent);
-        //
-        //            DrawSolidCircle(CCPoint.Zero - new CCPoint(radius / 2, radius / 2), ContentSize.Width * radius, CCColor4B.Red);
-        //        }
-    }
+    //    //        public override void OnEnter()
+    //    //        {
+    //    //            base.OnEnter();
+    //    //
+    //    //            var bounds = VisibleBoundsWorldspace;
+    //    //
+    //    //
+    //    //            var arrow = new CCPoint[arrowPoints.Length];
+    //    //            for (int a = 0; a < arrowPoints.Length; a++)
+    //    //            {
+    //    //                arrow[a] = (CCPoint)(ContentSize * (CCSize)arrowPoints[a]);
+    //    //            }
+    //    //
+    //    //            DrawPolygon(arrow, 
+    //    //                3, CCColor4B.White, 0, CCColor4B.Transparent);
+    //    //
+    //    //            DrawSolidCircle(CCPoint.Zero - new CCPoint(radius / 2, radius / 2), ContentSize.Width * radius, CCColor4B.Red);
+    //    //        }
+    //}
 
 
     public class GameLayer : CCLayerColor
     {
-        Arrow arrow;
         SimpleVehicle vehicle;
         Annotation annotation = new Annotation();
         // currently selected plug-in (user can choose or cycle through them)
@@ -82,6 +81,7 @@ namespace SteeringDemo
 
         public static CCLabelTtf statusLabel;
         public static CCLabelTtf pluginLabel;
+
         static float mouseX, mouseY;
 
         public GameLayer()
@@ -89,11 +89,6 @@ namespace SteeringDemo
         {
 
             // Load and instantate your assets here
-
-            // Make any renderable node objects (e.g. sprites) children of this layer
-            arrow = new Arrow();
-            //arrow.AnchorPoint = CCPoint.AnchorMiddle;
-            AddChild(arrow);
 
             Annotation.Drawer = new Drawing();
 
@@ -139,6 +134,19 @@ namespace SteeringDemo
             AddEventListener(touchListener);
             AddEventListener(mouseListener);
             AddEventListener(keyboarListener);
+
+//#if __MOBILE__
+
+            var nextMenuItem = new CCMenuItemFont("Next", (target) =>
+            {
+                Console.WriteLine("Take me to the next");
+            });
+
+            var menu = new CCMenu(nextMenuItem);
+
+            AddChild(menu);
+//#endif
+
 
             Schedule();
         }

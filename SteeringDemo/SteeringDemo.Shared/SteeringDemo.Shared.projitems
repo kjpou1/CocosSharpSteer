@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -46,7 +46,13 @@
     <Folder Include="$(MSBuildThisFileDirectory)Content\fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Content\fonts\MarkerFelt-12.xnb" />
+    <Content Include="$(MSBuildThisFileDirectory)ContentiOS\fonts\MarkerFelt-12.xnb" />
+    <None Include="$(MSBuildThisFileDirectory)Content\fonts\MarkerFelt-12.xnb">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Include="$(MSBuildThisFileDirectory)Content\fonts\MarkerFelt-22.xnb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)ContentiOS\fonts\MarkerFelt-22.xnb" />
   </ItemGroup>
 </Project>

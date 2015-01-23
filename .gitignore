@@ -168,14 +168,15 @@ pip-log.txt
 /src/packages/**/*.dll
 /src/packages/**/*.xml
 /src/packages/**/*.pri
-/SteeringDemo/packages/**/*.nupkg
-/SteeringDemo/packages/**/*.dll
-/SteeringDemo/packages/**/*.xml
-/SteeringDemo/packages/**/*.pri
 
 /SteeringDemo/SteeringDemo.Mac/packages/**/*.nupkg
 /SteeringDemo/SteeringDemo.Mac/packages/**/*.dll
 /SteeringDemo/SteeringDemo.Mac/packages/**/*.xml
 /SteeringDemo/SteeringDemo.Mac/packages/**/*.pri
 
+/SteeringDemo/SteeringDemo.Windows/packages/**/*.nupkg
+/SteeringDemo/SteeringDemo.Windows/packages/**/*.dll
+/SteeringDemo/SteeringDemo.Windows/packages/**/*.xml
+/SteeringDemo/SteeringDemo.Windows/packages/**/*.pri
+/SteeringDemo/SteeringDemo.Windows/packages/CocosSharp.ContentBuild*
 

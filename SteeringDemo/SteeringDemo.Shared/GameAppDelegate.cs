@@ -10,15 +10,15 @@ namespace SteeringDemo
         public override void ApplicationDidFinishLaunching(CCApplication application, CCWindow mainWindow)
         {
             application.PreferMultiSampling = false;
-            application.ContentRootDirectory = "Content";
-            application.ContentSearchPaths.Add("animations");
-            application.ContentSearchPaths.Add("fonts");
-            application.ContentSearchPaths.Add("sounds");
-
+            application.ContentRootDirectory = "ContentIOS";
+            
             CCSize windowSize = mainWindow.WindowSizeInPixels;
 
             float desiredWidth = 1024.0f;
             float desiredHeight = 640.0f;
+
+            desiredWidth = mainWindow.WindowSizeInPixels.Width;
+            desiredHeight = mainWindow.WindowSizeInPixels.Height;
 
             // This will set the world bounds to be (0,0, w, h)
             // CCSceneResolutionPolicy.ShowAll will ensure that the aspect ratio is preserved
