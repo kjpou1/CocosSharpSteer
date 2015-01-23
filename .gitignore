@@ -180,3 +180,4 @@ pip-log.txt
 /SteeringDemo/SteeringDemo.Windows/packages/**/*.pri
 /SteeringDemo/SteeringDemo.Windows/packages/CocosSharp.ContentBuild*
 
+SteeringDemo/SteeringDemo.Mac/packages/*
